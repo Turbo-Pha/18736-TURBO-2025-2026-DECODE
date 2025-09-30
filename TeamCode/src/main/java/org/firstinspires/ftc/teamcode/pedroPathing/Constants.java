@@ -1,3 +1,20 @@
+package org.firstinspires.ftc.teamcode.pedroPathing;
+
+import com.pedropathing.control.FilteredPIDFCoefficients;
+import com.pedropathing.follower.Follower;
+import com.pedropathing.follower.FollowerConstants;
+import com.pedropathing.ftc.FollowerBuilder;
+import com.pedropathing.ftc.drivetrains.MecanumConstants;
+import com.pedropathing.ftc.localization.constants.OTOSConstants;
+import com.pedropathing.paths.PathConstraints;
+import com.qualcomm.hardware.sparkfun.SparkFunOTOS;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.pedropathing.control.PIDFCoefficients;
+import org.firstinspires.ftc.robotcontroller.external.samples.SensorSparkFunOTOS;
+import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
+import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
+
 public class Constants {
 
   public static FollowerConstants followerConstants = new FollowerConstants()
@@ -21,15 +38,15 @@ public class Constants {
     .leftRearMotorDirection(DcMotorSimple.Direction.REVERSE)
     .rightFrontMotorDirection(DcMotorSimple.Direction.FORWARD)
     .rightRearMotorDirection(DcMotorSimple.Direction.FORWARD)
-    .xVelocity(57.8741)
+    .xVelocity(33.41)
     .yVelocity(52.295);
 
   public static OTOSConstants localizerConstants = new OTOSConstants()
     .hardwareMapName("sensor_otos")
     .linearUnit(DistanceUnit.INCH)
     .angleUnit(AngleUnit.RADIANS)
-    .offset(new SparkFunOTOS.Pose2D(0, 0, Math.PI / 2))
-    .linearScalar(1.0)
+    .offset(new SparkFunOTOS.Pose2D(5, 1.5, Math.PI / 0.5))
+    .linearScalar(1.55)
     .angularScalar(1.0);
 
   public static PathConstraints pathConstraints = new PathConstraints(
